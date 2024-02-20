@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropayTestAutomation", "PropayTestAutomation\PropayTestAutomation.csproj", "{EA37FADD-D531-4E90-ABC3-03DF9E0FB1EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropayNUnitFramework", "PropayNUnitFramework\PropayNUnitFramework.csproj", "{D5B894AC-678B-4A17-97E5-A6349C17AF23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA37FADD-D531-4E90-ABC3-03DF9E0FB1EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA37FADD-D531-4E90-ABC3-03DF9E0FB1EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA37FADD-D531-4E90-ABC3-03DF9E0FB1EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA37FADD-D531-4E90-ABC3-03DF9E0FB1EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5B894AC-678B-4A17-97E5-A6349C17AF23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5B894AC-678B-4A17-97E5-A6349C17AF23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5B894AC-678B-4A17-97E5-A6349C17AF23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5B894AC-678B-4A17-97E5-A6349C17AF23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8847C6C8-61CF-45BE-AA63-43EAAB1D4723}
+	EndGlobalSection
+EndGlobal
