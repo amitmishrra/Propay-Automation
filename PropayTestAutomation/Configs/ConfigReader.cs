@@ -1,25 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace NUnitFramework.Configs
 {
+    /// <summary>
+    /// Class for reading configuration settings from appSettings.json.
+    /// </summary>
     public class ConfigReader
     {
-        public static TestSettings ReadConfig() {
+        /// <summary>
+        /// Reads and deserializes configuration settings from appSettings.json.
+        /// </summary>
+        /// <returns>An instance of TestSettings containing configuration values.</returns>
+        public static TestSettings ReadConfig()
+        {
+            // Read the contents of appSettings.json
             var configFile = File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/appSettings.json");
 
-            var jsonSerialzeOptions = new JsonSerializerOptions() { 
+            // Configure JSON serialization options
+            var jsonSerializeOptions = new JsonSerializerOptions()
+            {
                 PropertyNameCaseInsensitive = true
             };
-            jsonSerialzeOptions.Converters.Add(new JsonStringEnumConverter());
+            jsonSerializeOptions.Converters.Add(new JsonStringEnumConverter());
 
-            return JsonSerializer.Deserialize<TestSettings>(configFile, jsonSerialzeOptions);
+            // Deserialize the JSON content into TestSettings object
+            return JsonSerializer.Deserialize<TestSettings>(configFile, jsonSerializeOptions);
         }
     }
 }

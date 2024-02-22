@@ -2,41 +2,54 @@ using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using NUnitFramework.Configs;
 using NUnitFramework.Drivers;
-using NUnitTestProject.Pages;
+using PropayNUnitFramework.Pages;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using PropayTestAutomation.Driver;
 
-namespace NUnitTestProject.StepDefinitions
+namespace PropayNUnitFramework.StepDefinitions
 {
+    /// <summary>
+    /// Step definitions for the test scenarios.
+    /// </summary>
     [Binding]
-   public sealed class TestStepDefinitions
+    public sealed class TestStepDefinitions
     {
-        DriverFixtures driverFixtures;
-        TestPage page;
+        private IWebDriverFixture? DriverFixtures;
+        private TestPage? page;
 
+        /// <summary>
+        /// Executes before each scenario to set up necessary resources.
+        /// </summary>
         [BeforeScenario]
         public void BeforeScenario()
         {
-            /* var _settings = ConfigReader.ReadConfig();*/
-            TestSettings settings = new TestSettings()
+            TestSettings? settings = new()
             {
                 BrowserType = BrowserType.CHROME,
                 AppURL = new Uri("https://practicetestautomation.com/practice-test-login/"),
             };
-            driverFixtures = new DriverFixtures(settings);
-            page = new TestPage(driverFixtures.Driver);
+            DriverFixtures = new DriverFixtures(settings);
+            page = new TestPage(DriverFixtures.Driver);
         }
 
+        /// <summary>
+        /// Initializes the browser and performs the test steps.
+        /// </summary>
+        /// <param name="browserName">Name of the browser.</param>
         [Given(@"I launch the browser using ""(.*)""")]
         public void InitializeTheBrowser(string browserName)
         {
-            page.RunTest();
+            page?.RunTest();
         }
 
+        /// <summary>
+        /// Executes after each scenario to clean up resources.
+        /// </summary>
         [AfterScenario]
         public void AfterScenario()
         {
-           
+            DriverFixtures?.DisposeDriver();
         }
     }
 }
