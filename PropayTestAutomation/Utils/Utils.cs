@@ -200,21 +200,21 @@ namespace PropayNUnitFramework.Utils
             } while (elapsedTime.TotalMilliseconds < milliseconds);
         }
 
-       /* public static void TakeScreenshot(string fileName)
-        {
-            Console.WriteLine("Take screnshort");
-            ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
-            Screenshot screenshot = screenshotDriver.GetScreenshot();
+        /* public static void TakeScreenshot(string fileName)
+         {
+             Console.WriteLine("Take screnshort");
+             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
+             Screenshot screenshot = screenshotDriver.GetScreenshot();
 
-            try
-            {
-                screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("An error occurred while taking a screenshot: " + e.Message);
-            }
-        }*/
+             try
+             {
+                 screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
+             }
+             catch (Exception e)
+             {
+                 Console.WriteLine("An error occurred while taking a screenshot: " + e.Message);
+             }
+         }*/
 
     }
 }
