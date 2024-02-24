@@ -1,11 +1,10 @@
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using NUnitFramework.Configs;
-using NUnitFramework.Drivers;
 using PropayNUnitFramework.Pages;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
-using PropayTestAutomation.Driver;
+using PropayTestAutomation.BrowserEngine;
 
 namespace PropayNUnitFramework.StepDefinitions
 {
@@ -15,9 +14,8 @@ namespace PropayNUnitFramework.StepDefinitions
     [Binding]
     public sealed class TestStepDefinitions
     {
-        private IWebDriverFixture? DriverFixtures;
+        private IBrowserEngine? BrowserEngine;
         private TestPage? page;
-
         /// <summary>
         /// Executes before each scenario to set up necessary resources.
         /// </summary>
@@ -27,10 +25,11 @@ namespace PropayNUnitFramework.StepDefinitions
             TestSettings? settings = new()
             {
                 BrowserType = BrowserType.CHROME,
-                AppURL = new Uri("https://practicetestautomation.com/practice-test-login/"),
+                AppURL = new Uri("https://practicetestautomation.com/"),
             };
-            DriverFixtures = new DriverFixtures(settings);
-            page = new TestPage(DriverFixtures.Driver);
+            BrowserEngine = new BrowserEngine(settings);
+            page = new TestPage(BrowserEngine);
+
         }
 
         /// <summary>
@@ -49,7 +48,7 @@ namespace PropayNUnitFramework.StepDefinitions
         [AfterScenario]
         public void AfterScenario()
         {
-            DriverFixtures?.DisposeDriver();
+            BrowserEngine?.DisposeDriver();
         }
     }
 }

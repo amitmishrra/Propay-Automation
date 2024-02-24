@@ -1,10 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using System.Threading;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-
-namespace PropayNUnitFramework.Utils
+namespace PropayTestAutomation.Utils
 {
-    internal class Utils
+    public class Utils
     {
         private static IWebDriver driver;
 
@@ -13,32 +15,35 @@ namespace PropayNUnitFramework.Utils
             driver = _driver;
         }
 
-
+        // Waits for the specified web element to be clickable
         public static void WaitForWebElementToBeClickable(IWebElement element)
         {
             SetImplicitWait(TimeSpan.FromSeconds(10));
+
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                wait.Until(ExpectedConditions.ElementToBeClickable(element));
+                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
             }
             catch (WebDriverTimeoutException e)
             {
-                Console.WriteLine("Element did not become visible within the specified time.");
+                Console.WriteLine("Element did not become clickable within the specified time.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
             }
         }
 
-        public static void WaitForWebElementToBeVisible(By locator)
+        // Waits for the specified web element to be visible
+        public static void WaitForWebElementToBeVisible(IWebElement webElement)
         {
             SetImplicitWait(TimeSpan.FromSeconds(10));
+
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                wait.Until(ExpectedConditions.ElementIsVisible(locator));
+                wait.Until(driver => (webElement != null && webElement.Displayed));
             }
             catch (WebDriverTimeoutException e)
             {
@@ -46,110 +51,107 @@ namespace PropayNUnitFramework.Utils
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
             }
         }
 
-
-
-
-        public static void SetImplicitWait(TimeSpan timeSpan)
-        {
-            driver.Manage().Timeouts().ImplicitWait = timeSpan;
-        }
-
-        public static void ScrollToElement(IWebElement element)
-        {
-            try
-            {
-                ((IJavaScriptExecutor)driver)
-                         .ExecuteScript("arguments[0].scrollIntoView(true);", element);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An error occurred: " + ex.Message);
-            }
-        }
-
+        // Scrolls to the specified element and clicks it
         public static void ScrollAndClickElement(IWebElement element)
         {
             try
             {
                 WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                IWebElement clickableElement = wait.Until(ExpectedConditions.ElementToBeClickable(element));
+                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
 
-                ((IJavaScriptExecutor)driver)
-                         .ExecuteScript("arguments[0].scrollIntoView(true);", element);
-                clickableElement.Click();
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
+                element.Click();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
             }
         }
 
+        // Sets the implicit wait time for the driver
+        public static void SetImplicitWait(TimeSpan timeSpan)
+        {
+            driver.Manage().Timeouts().ImplicitWait = timeSpan;
+        }
 
+        // Scrolls to the specified element
+        public static void ScrollToElement(IWebElement element)
+        {
+            try
+            {
+                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail("Test failed: " + ex.Message);
+            }
+        }
 
+        // Clicks on an element identified by the specified text
         public static void ClickOnText(String text)
         {
             try
             {
                 IWebElement element = driver.FindElement(By.XPath("//*[text()='" + text + "']"));
-                WaitForWebElementToBeVisible(By.XPath("//*[text()='" + text + "']"));
+                WaitForWebElementToBeVisible(element);
                 ScrollAndClickElement(element);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Assert.Fail("Test failed: " + e.Message);
             }
         }
 
-        public static void Click(By path)
+        // Clicks on the specified element
+        public static void Click(IWebElement element)
         {
             try
             {
-                WaitForWebElementToBeVisible(path);
-                IWebElement element = driver.FindElement(path);
                 ScrollAndClickElement(element);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Assert.Fail("Test failed: " + e.Message);
             }
         }
 
-        public static void SendKeys(By path, String text)
+        // Sends keys to the specified element
+        public static void SendKeys(IWebElement element, String text)
         {
             try
             {
-                WaitForWebElementToBeVisible(path);
-                IWebElement element = driver.FindElement(path);
+                WaitForWebElementToBeVisible(element);
                 ScrollToElement(element);
                 element.SendKeys(text);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Assert.Fail("Test failed: " + e.Message);
             }
         }
 
-        public static void CleanAndSendKeys(By path, String text)
+        // Clears the element and sends keys to it
+        public static void CleanAndSendKeys(IWebElement element, String text)
         {
             try
             {
-                WaitForWebElementToBeVisible(path);
-                IWebElement element = driver.FindElement(path);
+                WaitForWebElementToBeVisible(element);
                 ScrollToElement(element);
                 element.Clear();
                 element.SendKeys(text);
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
             }
         }
 
-        public static bool isElementPresent(By by)
+        // Checks if an element identified by the specified By exists
+        public static bool IsElementPresent(By by)
         {
             try
             {
@@ -162,18 +164,19 @@ namespace PropayNUnitFramework.Utils
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
                 return false;
             }
         }
 
-        public static bool isTextPresent(string text)
+        // Checks if the specified text is present in the page
+        public static bool IsTextPresent(string text)
         {
             try
             {
                 By by = By.XPath("//*[contains(text(),'" + text + "')]");
                 IWebElement element = driver.FindElement(by);
-                WaitForWebElementToBeVisible(by);
+                WaitForWebElementToBeVisible(element);
                 return true;
             }
             catch (NoSuchElementException)
@@ -182,12 +185,13 @@ namespace PropayNUnitFramework.Utils
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occurred: " + ex.Message);
+                Assert.Fail("Test failed: " + ex.Message);
                 return false;
             }
         }
 
-        public static void FluentWait(int milliseconds)
+        // Implements a basic fluent wait
+        public static void FluentWait(int seconds)
         {
             DateTime startTime = DateTime.Now;
             TimeSpan elapsedTime;
@@ -197,12 +201,12 @@ namespace PropayNUnitFramework.Utils
                 DateTime currentTime = DateTime.Now;
                 elapsedTime = currentTime - startTime;
                 Thread.Sleep(100);
-            } while (elapsedTime.TotalMilliseconds < milliseconds);
+            } while (elapsedTime.TotalMilliseconds < seconds * 1000);
         }
 
         /* public static void TakeScreenshot(string fileName)
          {
-             Console.WriteLine("Take screnshort");
+             Console.WriteLine("Take screenshot");
              ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
              Screenshot screenshot = screenshotDriver.GetScreenshot();
 
