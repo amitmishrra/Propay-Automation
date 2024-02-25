@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PropayNUnitFramework.Features
+namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
 {
     using TechTalk.SpecFlow;
     using System;

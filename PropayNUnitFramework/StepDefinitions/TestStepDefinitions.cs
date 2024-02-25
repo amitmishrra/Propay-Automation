@@ -1,10 +1,8 @@
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using NUnitFramework.Configs;
-using PropayNUnitFramework.Pages;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
-using PropayTestAutomation.BrowserEngine;
+using ProPay.Test.NewGen.Runners.Configs;
+using ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Pages;
+using ProPay.Test.NewGen.Runners.BrowserEngine;
 
 namespace PropayNUnitFramework.StepDefinitions
 {
@@ -14,22 +12,21 @@ namespace PropayNUnitFramework.StepDefinitions
     [Binding]
     public sealed class TestStepDefinitions
     {
-        private IBrowserEngine? BrowserEngine;
         private TestPage? page;
+        private IBrowserEngine? BrowserEngine;
         /// <summary>
         /// Executes before each scenario to set up necessary resources.
         /// </summary>
-        [BeforeScenario]
-        public void BeforeScenario()
+
+        public TestStepDefinitions()
         {
             TestSettings? settings = new()
             {
-                BrowserType = BrowserType.CHROME,
-                AppURL = new Uri("https://practicetestautomation.com/"),
+                BrowserType = BrowserType.Edge,
+                AppURL = new Uri("https://demoqa.com/progress-bar"),
             };
             BrowserEngine = new BrowserEngine(settings);
             page = new TestPage(BrowserEngine);
-
         }
 
         /// <summary>
@@ -39,12 +36,9 @@ namespace PropayNUnitFramework.StepDefinitions
         [Given(@"I launch the browser using ""(.*)""")]
         public void InitializeTheBrowser(string browserName)
         {
-            page?.RunTest();
+            page?.WaitTest();
         }
 
-        /// <summary>
-        /// Executes after each scenario to clean up resources.
-        /// </summary>
         [AfterScenario]
         public void AfterScenario()
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lp6n/m1f0t4gRnZta8pShcwf60mPRUhh7/C/KGuW8Ofjb7oPqPB5tcjX8kGkm3+oqwPHQLXXrC/s40NrE8n4tg==",
+  "dgSpecHash": "dR3JEMlgBuYcWZHKrvAlo0V7xX3Moj2ODGtkjn51fyBdfEyhETXSpNwzPPJI4MkMYMnx/nE9uhaS/DfmBz0pKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\PropayNUnitFramework.csproj",
+  "projectFilePath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amit\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",

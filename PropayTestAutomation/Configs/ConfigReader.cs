@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace NUnitFramework.Configs
+namespace ProPay.Test.NewGen.Runners.Configs
 {
     /// <summary>
     /// Class for reading configuration settings from appSettings.json.

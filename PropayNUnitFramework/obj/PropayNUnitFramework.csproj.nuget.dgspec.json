@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj": {
-                "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj"
+              "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj": {
+                "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj"
               }
             }
           }
@@ -93,12 +93,12 @@
         }
       }
     },
-    "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj": {
+    "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj",
-        "projectName": "PropayTestAutomation",
-        "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj",
+        "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj",
+        "projectName": "ProPay.Test.NewGen.Runners",
+        "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj",
         "packagesPath": "C:\\Users\\Amit\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\obj\\",
         "projectStyle": "PackageReference",

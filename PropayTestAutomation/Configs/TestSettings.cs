@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NUnitFramework.Configs
+namespace ProPay.Test.NewGen.Runners.Configs
 {
     /// <summary>
     /// Represents configuration settings for tests.

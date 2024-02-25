@@ -3,8 +3,8 @@
 /// </summary>
 public enum BrowserType
 {
-    CHROME,
-    FIREFOX,
-    SAFARI,
-    EDGE
+    Chrome,
+    Firefox,
+    Safari,
+    Edge
 }

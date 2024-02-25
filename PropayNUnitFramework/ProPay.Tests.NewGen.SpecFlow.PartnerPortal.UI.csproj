@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PropayTestAutomation\PropayTestAutomation.csproj" />
+    <ProjectReference Include="..\PropayTestAutomation\ProPay.Test.NewGen.Runners.csproj" />
   </ItemGroup>
 
 </Project>

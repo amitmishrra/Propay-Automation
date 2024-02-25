@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace PropayTestAutomation.BrowserEngine
+namespace ProPay.Test.NewGen.Runners.BrowserEngine
 {
     /// <summary>
     /// Interface for managing WebDriver instances.
@@ -10,14 +10,12 @@ namespace PropayTestAutomation.BrowserEngine
         /// <summary>
         /// Gets the WebDriver instance.
         /// </summary>
-        IWebDriver Driver { get; }
+        IWebDriver Driver { get; }   
 
         /// <summary>
         /// Disposes of the WebDriver instance.
         /// </summary>
-        void DisposeDriver();
+        void DisposeDriver();  
 
-        IWebElement FindElement(By by);
-        IEnumerable<IWebElement> FindElements(By by);
     }
 }

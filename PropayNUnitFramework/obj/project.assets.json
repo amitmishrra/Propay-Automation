@@ -1666,7 +1666,7 @@
           }
         }
       },
-      "PropayTestAutomation/1.0.0": {
+      "ProPay.Test.NewGen.Runners/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1676,10 +1676,10 @@
           "Selenium.WebDriver": "4.18.1"
         },
         "compile": {
-          "bin/placeholder/PropayTestAutomation.dll": {}
+          "bin/placeholder/ProPay.Test.NewGen.Runners.dll": {}
         },
         "runtime": {
-          "bin/placeholder/PropayTestAutomation.dll": {}
+          "bin/placeholder/ProPay.Test.NewGen.Runners.dll": {}
         }
       }
     }
@@ -5611,10 +5611,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "PropayTestAutomation/1.0.0": {
+    "ProPay.Test.NewGen.Runners/1.0.0": {
       "type": "project",
-      "path": "../PropayTestAutomation/PropayTestAutomation.csproj",
-      "msbuildProject": "../PropayTestAutomation/PropayTestAutomation.csproj"
+      "path": "../PropayTestAutomation/ProPay.Test.NewGen.Runners.csproj",
+      "msbuildProject": "../PropayTestAutomation/ProPay.Test.NewGen.Runners.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5622,7 +5622,7 @@
       "FluentAssertions >= 6.2.0",
       "Microsoft.NET.Test.Sdk >= 17.0.0",
       "NUnit3TestAdapter >= 4.5.0",
-      "PropayTestAutomation >= 1.0.0",
+      "ProPay.Test.NewGen.Runners >= 1.0.0",
       "Selenium.Support >= 4.18.1",
       "SpecFlow.NUnit >= 3.9.40",
       "SpecFlow.Plus.LivingDocPlugin >= 3.9.57",
@@ -5635,9 +5635,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\PropayNUnitFramework.csproj",
-      "projectName": "PropayNUnitFramework",
-      "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\PropayNUnitFramework.csproj",
+      "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj",
+      "projectName": "ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI",
+      "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj",
       "packagesPath": "C:\\Users\\Amit\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayNUnitFramework\\obj\\",
       "projectStyle": "PackageReference",
@@ -5656,8 +5656,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj": {
-              "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj"
+            "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj": {
+              "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj"
             }
           }
         }

@@ -9,13 +9,13 @@ using global::System.Runtime.CompilerServices;
 
 [GeneratedCode("SpecFlow", "3.9.40")]
 [SetUpFixture]
-public class PropayNUnitFramework_NUnitAssemblyHooks
+public class ProPay_Tests_NewGen_SpecFlow_PartnerPortal_UI_NUnitAssemblyHooks
 {
     [OneTimeSetUp]
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyInitialize()
     {
-        var currentAssembly = typeof(PropayNUnitFramework_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(ProPay_Tests_NewGen_SpecFlow_PartnerPortal_UI_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunStart(currentAssembly);
     }
@@ -24,7 +24,7 @@ public class PropayNUnitFramework_NUnitAssemblyHooks
     [MethodImpl(MethodImplOptions.NoInlining)]
     public void AssemblyCleanup()
     {
-        var currentAssembly = typeof(PropayNUnitFramework_NUnitAssemblyHooks).Assembly;
+        var currentAssembly = typeof(ProPay_Tests_NewGen_SpecFlow_PartnerPortal_UI_NUnitAssemblyHooks).Assembly;
 
         TestRunnerManager.OnTestRunEnd(currentAssembly);
     }

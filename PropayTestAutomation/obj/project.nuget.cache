@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3PUh6AwnCfyKRCEgvZ11UscmcvlrJ29fCp4NGEkKSH7y59udZI4Hi4ttuU4ULlgrJZjvcBtxeZWX0UqpQ20eng==",
+  "dgSpecHash": "z5L7xXSMAAbd+XJVIUXfhim5bh2uUI3Gyvqa9W6QCg6OGBYoD2elNVUx4BY2SvhSEVqhTEMClxPZKs0zj6QhMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj",
+  "projectFilePath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Amit\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Amit\\.nuget\\packages\\nunit\\4.0.1\\nunit.4.0.1.nupkg.sha512",

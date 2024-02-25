@@ -1,65 +1,33 @@
 ﻿using OpenQA.Selenium;
-using PropayTestAutomation.BrowserEngine;
-using PropayTestAutomation.Utils;
+using OpenQA.Selenium.Support.UI;
+using ProPay.Test.NewGen.Runners.BrowserEngine;
+using ProPay.Test.NewGen.Runners.DriverHelpers;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PropayNUnitFramework.Pages
+namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Pages
 {
-    /// <summary>
-    /// Represents a test page with elements and actions.
-    /// </summary>
-    public class TestPage
+    internal class TestPage : DriverHelpers
     {
         private readonly IBrowserEngine _browserEngine;
-        private readonly Utils _utils;
-
-        /// <summary>
-        /// Constructor to initialize the TestPage with a BrowserEngine instance.
-        /// </summary>
-        /// <param name="_browserEngine">The BrowserEngine instance.</param>
         public TestPage(IBrowserEngine _browserEngine)
         {
             this._browserEngine = _browserEngine;
-            _utils = new Utils(_browserEngine.Driver);
+            driver = _browserEngine.Driver;
+            _webDriverWait = new Lazy<WebDriverWait>(GetDriverWait);
         }
 
-        // Define web elements using XPath
-        private IWebElement UsernameInput => _browserEngine.FindElement(By.XPath("//*[@id='username']"));
-        private IWebElement PasswordInput => _browserEngine.FindElement(By.XPath("//*[@id='password']"));
-        private IWebElement SubmitButton => _browserEngine.FindElement(By.XPath("//*[@id='submit']"));
-        private IWebElement PracticeButton => _browserEngine.FindElement(By.XPath("//*[text()='Practice']"));
-
-        /// <summary>
-        /// Performs a sample test by interacting with elements on the page.
-        /// </summary>
-        public void RunTest()
-        {
-            Utils.Click(PracticeButton);
-            Utils.ClickOnText("Test Login Page");
-            Utils.SendKeys(UsernameInput, "student");
-            Utils.SendKeys(PasswordInput, "Password123");
-            Utils.Click(SubmitButton);
-
-            Utils.FluentWait(5);
-
-        }
-
+        private IWebElement startButton => FindElement(By.XPath("//*[text()='Start']"));
+        private IWebElement resetButton => FindElement(By.XPath("//*[text()='Reset']"));
         public void WaitTest()
         {
-          Utils.FluentWait(10);
-          Console.WriteLine("Wait for 10 seconds");
-
-          Utils.ClickOnText("Start");
-          Console.WriteLine("Start Clicked");
-
-          Utils.FluentWait(30);
-          Console.WriteLine("Wait for 30 seconds");
-
-          Utils.ClickOnText("Reset");
-          Console.WriteLine("Reset Clicked");
-
-          Utils.FluentWait(10);
-          Console.WriteLine("Wait for 10 seconds");
+            FluentWait(10);
+            ScrollAndClickElement(startButton);
+            ScrollAndClickElement(resetButton);
+            FluentWait(10);
         }
     }
 }

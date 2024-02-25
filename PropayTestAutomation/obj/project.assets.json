@@ -210,9 +210,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj",
-      "projectName": "PropayTestAutomation",
-      "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\PropayTestAutomation.csproj",
+      "projectUniqueName": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj",
+      "projectName": "ProPay.Test.NewGen.Runners",
+      "projectPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\ProPay.Test.NewGen.Runners.csproj",
       "packagesPath": "C:\\Users\\Amit\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Amit\\source\\repos\\PropayTestAutomation\\PropayTestAutomation\\obj\\",
       "projectStyle": "PackageReference",

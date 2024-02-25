@@ -11,7 +11,7 @@
           "FluentAssertions": "6.2.0",
           "Microsoft.NET.Test.Sdk": "17.0.0",
           "NUnit3TestAdapter": "4.5.0",
-          "PropayTestAutomation": "1.0.0",
+          "ProPay.Test.NewGen.Runners": "1.0.0",
           "Selenium.Support": "4.18.1",
           "SpecFlow.NUnit": "3.9.40",
           "SpecFlow.Plus.LivingDocPlugin": "3.9.57",
@@ -1006,7 +1006,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "PropayTestAutomation/1.0.0": {
+      "ProPay.Test.NewGen.Runners/1.0.0": {
         "dependencies": {
           "NUnit": "4.0.1",
           "NUnit3TestAdapter": "4.5.0",
@@ -1014,7 +1014,7 @@
           "Selenium.WebDriver": "4.18.1"
         },
         "runtime": {
-          "PropayTestAutomation.dll": {}
+          "ProPay.Test.NewGen.Runners.dll": {}
         }
       }
     }
@@ -1627,7 +1627,7 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "PropayTestAutomation/1.0.0": {
+    "ProPay.Test.NewGen.Runners/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

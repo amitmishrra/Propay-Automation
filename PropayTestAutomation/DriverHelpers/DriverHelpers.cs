@@ -1,24 +1,46 @@
-﻿using System;
-using System.Threading;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace PropayTestAutomation.Utils
+namespace ProPay.Test.NewGen.Runners.DriverHelpers
 {
-    public class Utils
+    public class DriverHelpers
     {
-        private static IWebDriver driver;
+        public static IWebDriver driver;
+        public static Lazy<WebDriverWait> _webDriverWait;
 
-        public Utils(IWebDriver _driver)
+        public WebDriverWait GetDriverWait()
         {
-            driver = _driver;
+            // Set up WebDriverWait with specified timeout and polling interval
+            return new WebDriverWait(driver, timeout: TimeSpan.FromSeconds( 30))
+            {
+                PollingInterval = TimeSpan.FromSeconds(1)
+            };
+        }
+
+        /// <summary>
+        /// Finds a web element using the specified locator.
+        /// </summary>
+        /// <param name="by">Locator strategy.</param>
+        /// <returns>Found web element.</returns>
+        public static IWebElement FindElement(By by)
+        {
+            return _webDriverWait.Value.Until(_ => driver.FindElement(by));
+        }
+
+        /// <summary>
+        /// Finds a list of web elements using the specified locator.
+        /// </summary>
+        /// <param name="by">Locator strategy.</param>
+        /// <returns>List of found web elements.</returns>
+        public static IEnumerable<IWebElement> FindElements(By by)
+        {
+            return _webDriverWait.Value.Until(_ => driver.FindElements(by));
         }
 
         // Waits for the specified web element to be clickable
         public static void WaitForWebElementToBeClickable(IWebElement element)
         {
-            SetImplicitWait(TimeSpan.FromSeconds(10));
 
             try
             {
@@ -38,7 +60,6 @@ namespace PropayTestAutomation.Utils
         // Waits for the specified web element to be visible
         public static void WaitForWebElementToBeVisible(IWebElement webElement)
         {
-            SetImplicitWait(TimeSpan.FromSeconds(10));
 
             try
             {
@@ -72,12 +93,6 @@ namespace PropayTestAutomation.Utils
             }
         }
 
-        // Sets the implicit wait time for the driver
-        public static void SetImplicitWait(TimeSpan timeSpan)
-        {
-            driver.Manage().Timeouts().ImplicitWait = timeSpan;
-        }
-
         // Scrolls to the specified element
         public static void ScrollToElement(IWebElement element)
         {
@@ -92,13 +107,13 @@ namespace PropayTestAutomation.Utils
         }
 
         // Clicks on an element identified by the specified text
-        public static void ClickOnText(String text)
+        public static void ClickOnText(string text)
         {
             try
             {
                 IWebElement element = driver.FindElement(By.XPath("//*[text()='" + text + "']"));
                 WaitForWebElementToBeVisible(element);
-                ScrollAndClickElement(element);
+                Click(element);
             }
             catch (Exception e)
             {
@@ -111,7 +126,9 @@ namespace PropayTestAutomation.Utils
         {
             try
             {
-                ScrollAndClickElement(element);
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
+                element.Click();
             }
             catch (Exception e)
             {
@@ -125,7 +142,6 @@ namespace PropayTestAutomation.Utils
             try
             {
                 WaitForWebElementToBeVisible(element);
-                ScrollToElement(element);
                 element.SendKeys(text);
             }
             catch (Exception e)
@@ -140,7 +156,6 @@ namespace PropayTestAutomation.Utils
             try
             {
                 WaitForWebElementToBeVisible(element);
-                ScrollToElement(element);
                 element.Clear();
                 element.SendKeys(text);
             }
@@ -219,6 +234,9 @@ namespace PropayTestAutomation.Utils
                  Console.WriteLine("An error occurred while taking a screenshot: " + e.Message);
              }
          }*/
-
+        public void AsstertMethod()
+        {
+            
+        }
     }
 }
