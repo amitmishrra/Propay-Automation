@@ -9,7 +9,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
         public static IWebDriver driver;
         public static Lazy<WebDriverWait> _webDriverWait;
 
-        public WebDriverWait GetDriverWait()
+        public static WebDriverWait GetDriverWait()
         {
             // Set up WebDriverWait with specified timeout and polling interval
             return new WebDriverWait(driver, timeout: TimeSpan.FromSeconds( 30))
@@ -44,7 +44,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
 
             try
             {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                var wait = GetDriverWait();
                 wait.Until(driver => (element != null && element.Displayed && element.Enabled));
             }
             catch (WebDriverTimeoutException e)
@@ -63,7 +63,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
 
             try
             {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                var wait = GetDriverWait();
                 wait.Until(driver => (webElement != null && webElement.Displayed));
             }
             catch (WebDriverTimeoutException e)

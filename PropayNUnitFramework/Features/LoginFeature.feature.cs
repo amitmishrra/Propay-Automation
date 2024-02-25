@@ -21,12 +21,14 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Login")]
+    [NUnit.Framework.CategoryAttribute("Login")]
     public partial class LoginFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "Login"};
         
 #line 1 "LoginFeature.feature"
 #line hidden
@@ -35,7 +37,8 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", null, ProgrammingLanguage.CSharp, new string[] {
+                        "Login"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,7 +83,7 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login Test", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 3
+#line 4
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -100,22 +103,22 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 5
   testRunner.Given("Navigate to Practice page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 5
+#line 6
   testRunner.Then("Click on \"Test Login Page\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 6
+#line 7
   testRunner.When("Enter Credentials \"student\" and \"Password123\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 7
+#line 8
   testRunner.Then("Click on submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 8
+#line 9
   testRunner.Then("Verify that Logout button is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 9
+#line 10
   testRunner.Then("Click on Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

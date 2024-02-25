@@ -1,4 +1,5 @@
-﻿Feature: Login
+@Login
+Feature: Login
 
 	 Scenario: Login Test
 		Given Navigate to Practice page

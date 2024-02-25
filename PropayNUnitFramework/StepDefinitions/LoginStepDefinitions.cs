@@ -7,17 +7,16 @@ using TechTalk.SpecFlow;
 namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.StepDefinitions
 {
     [Binding]
+    [Scope(Tag = "Login")]
     public class LoginStepDefinitions
     {
-        private LoginPage? page;
+        private LoginPage page;
         private IBrowserEngine? BrowserEngine;
 
-        /// <summary>
-        /// Executes before each scenario to set up necessary resources.
-        /// </summary>
-
+       
         public LoginStepDefinitions()
         {
+            Console.WriteLine("LoginStepDefinitions calleddddd");
             TestSettings? settings = new()
             {
                 BrowserType = BrowserType.Chrome,
@@ -25,7 +24,6 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.StepDefinitions
             };
             BrowserEngine = new BrowserEngine(settings);
             page = new LoginPage(BrowserEngine);
-
         }
 
         [Given(@"Navigate to Practice page")]
@@ -63,7 +61,6 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.StepDefinitions
         {
             page?.Logout();
         }
-
 
         [AfterScenario]
         public void AfterScenario()

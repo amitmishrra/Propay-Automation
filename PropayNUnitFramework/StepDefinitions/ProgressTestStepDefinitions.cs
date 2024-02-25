@@ -1,40 +1,39 @@
-using NUnit.Framework;
-using NUnit.Framework.Interfaces;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using ProPay.Test.NewGen.Runners.BrowserEngine;
 using ProPay.Test.NewGen.Runners.Configs;
 using ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Pages;
-using ProPay.Test.NewGen.Runners.BrowserEngine;
+using System;
+using TechTalk.SpecFlow;
 
-namespace PropayNUnitFramework.StepDefinitions
+namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.StepDefinitions
 {
-    /// <summary>
-    /// Step definitions for the test scenarios.
-    /// </summary>
     [Binding]
-    public sealed class TestStepDefinitions
+    [Scope(Tag = "Progress")]
+    public class ProgressTestStepDefinitions
     {
-        private TestPage? page;
+
         private IBrowserEngine? BrowserEngine;
+        private ProgressPage page;
         /// <summary>
         /// Executes before each scenario to set up necessary resources.
         /// </summary>
 
-        public TestStepDefinitions()
+        
+        public ProgressTestStepDefinitions()
         {
+            Console.WriteLine("TestStepDefinitions calleddddd");
             TestSettings? settings = new()
             {
                 BrowserType = BrowserType.Edge,
                 AppURL = new Uri("https://demoqa.com/progress-bar"),
             };
             BrowserEngine = new BrowserEngine(settings);
-            page = new TestPage(BrowserEngine);
+            page = new ProgressPage(BrowserEngine);
         }
 
-        /// <summary>
-        /// Initializes the browser and performs the test steps.
-        /// </summary>
-        /// <param name="browserName">Name of the browser.</param>
-        [Given(@"I launch the browser using ""(.*)""")]
-        public void InitializeTheBrowser(string browserName)
+
+        [Given(@"I launch the browser using ""([^""]*)""")]
+        public void GivenILaunchTheBrowserUsing(string chrome)
         {
             page?.WaitTest();
         }
@@ -44,5 +43,6 @@ namespace PropayNUnitFramework.StepDefinitions
         {
             BrowserEngine?.DisposeDriver();
         }
+
     }
 }
