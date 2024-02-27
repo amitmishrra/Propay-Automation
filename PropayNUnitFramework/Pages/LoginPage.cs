@@ -1,68 +1,62 @@
-﻿
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using ProPay.Test.NewGen.Runners.BrowserEngine;
 using ProPay.Test.NewGen.Runners.DriverHelpers;
 
-namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Pages
+namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Pages;
+
+/// <summary>
+///     Represents a test page with elements and actions.
+/// </summary>
+public class LoginPage : DriverHelpers
 {
     /// <summary>
-    /// Represents a test page with elements and actions.
+    ///     Constructor to initialize the TestPage with a BrowserEngine instance.
     /// </summary>
-    public class LoginPage : DriverHelpers
+    /// <param name="_browserEngine">The BrowserEngine instance.</param>
+    public LoginPage(IBrowserEngine _browserEngine)
     {
+        driver = _browserEngine.Driver;
+        _webDriverWait = new Lazy<WebDriverWait>(GetDriverWait);
+    }
 
-        /// <summary>
-        /// Constructor to initialize the TestPage with a BrowserEngine instance.
-        /// </summary>
-        /// <param name="_browserEngine">The BrowserEngine instance.</param>
-        public LoginPage(IBrowserEngine _browserEngine)
-        {
+    // Define web elements using XPath
+    private IWebElement UsernameInput => FindElement(By.XPath("//*[@id='username']"));
+    private IWebElement PasswordInput => FindElement(By.XPath("//*[@id='password']"));
+    private IWebElement SubmitButton => FindElement(By.XPath("//*[@id='submit']"));
+    private IWebElement PracticeButton => FindElement(By.XPath("//*[text()='Practice']"));
 
-            driver = _browserEngine.Driver;
-            _webDriverWait = new Lazy<WebDriverWait>(GetDriverWait);
-        }
+    /// <summary>
+    ///     Performs a sample test by interacting with elements on the page.
+    /// </summary>
+    public void ClickPracticeButton()
+    {
+        Click(PracticeButton);
+    }
 
-        // Define web elements using XPath
-        private IWebElement UsernameInput => FindElement(By.XPath("//*[@id='username']"));
-        private IWebElement PasswordInput => FindElement(By.XPath("//*[@id='password']"));
-        private IWebElement SubmitButton => FindElement(By.XPath("//*[@id='submit']"));
-        private IWebElement PracticeButton => FindElement(By.XPath("//*[text()='Practice']"));
+    public void ClickTestLoginPage(string button)
+    {
+        ClickOnText(button);
+    }
 
-        /// <summary>
-        /// Performs a sample test by interacting with elements on the page.
-        /// </summary>
+    public void InputCredentials(string username, string password)
+    {
+        SendKeys(UsernameInput, username);
+        SendKeys(PasswordInput, password);
+    }
 
-        public void ClickPracticeButton()
-        {
-            Click(PracticeButton);
-        }
+    public void Submit()
+    {
+        Click(SubmitButton);
+    }
 
-        public void ClickTestLoginPage(string button)
-        {
-            ClickOnText(button);
-        }
+    public void VerifyUserLoggedIn()
+    {
+        IsTextPresent("Logged In Successfully");
+    }
 
-        public void InputCredentials(string username, string password)
-        {
-            SendKeys(UsernameInput, username);
-            SendKeys(PasswordInput, password);
-        }
-
-        public void Submit()
-        {
-            Click(SubmitButton);
-        }
-
-        public void VerifyUserLoggedIn()
-        {
-            IsTextPresent("Logged In Successfully");
-        }
-
-        public void Logout()
-        {
-            ClickOnText("Log out");
-        }
+    public void Logout()
+    {
+        ClickOnText("Log out");
     }
 }
-

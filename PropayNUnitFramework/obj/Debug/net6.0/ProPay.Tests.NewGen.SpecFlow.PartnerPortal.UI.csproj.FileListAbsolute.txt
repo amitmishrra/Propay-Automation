@@ -133,7 +133,6 @@ C:/Users/Amit/source/repos/PropayTestAutomation/PropayNUnitFramework/obj/Debug/n
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/nunit.engine.api.dll
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/nunit.engine.core.dll
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/testcentric.engine.metadata.dll
-/Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/Configs/appSettings.json
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.deps.json
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.runtimeconfig.json
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll
@@ -241,3 +240,4 @@ C:/Users/Amit/source/repos/PropayTestAutomation/PropayNUnitFramework/obj/Debug/n
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.pdb
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.genruntimeconfig.cache
 /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/obj/Debug/net6.0/ref/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll
+/Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/bin/Debug/net6.0/Configs/appSettings.json

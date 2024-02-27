@@ -18,9 +18,11 @@ namespace ProPay.Test.NewGen.Runners.Configs
         /// <returns>An instance of TestSettings containing configuration values.</returns>
         public static TestSettings ReadConfig()
         {
+            Console.WriteLine("path to the path:--"+ Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             // Read the contents of appSettings.json
-            var configFile = File.ReadAllText(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/appSettings.json");
-
+            var configFile = File.ReadAllText(
+                "/Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/Configs/appSettings.json");
+            
             // Configure JSON serialization options
             var jsonSerializeOptions = new JsonSerializerOptions()
             {

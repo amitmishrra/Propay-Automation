@@ -45,7 +45,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
             try
             {
                 var wait = GetDriverWait();
-                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
+                _webDriverWait.Value.Until(_ => (element != null && element.Displayed && element.Enabled));
             }
             catch (WebDriverTimeoutException e)
             {
@@ -64,7 +64,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
             try
             {
                 var wait = GetDriverWait();
-                wait.Until(driver => (webElement != null && webElement.Displayed));
+                wait.Until(_ => (webElement != null && webElement.Displayed));
             }
             catch (WebDriverTimeoutException e)
             {

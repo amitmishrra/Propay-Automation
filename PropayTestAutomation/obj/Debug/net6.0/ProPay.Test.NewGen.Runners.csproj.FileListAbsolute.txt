@@ -29,7 +29,6 @@ C:/Users/Amit/source/repos/PropayTestAutomation/PropayTestAutomation/obj/Debug/n
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/nunit.engine.api.dll
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/nunit.engine.core.dll
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/testcentric.engine.metadata.dll
-/Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/Configs/appSettings.json
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.deps.json
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.dll
 /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb
