@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProPay.Test.NewGen.Runners
-build_property.ProjectDir = C:\Users\Amit\source\repos\PropayTestAutomation\PropayTestAutomation\
+build_property.ProjectDir = /Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/
