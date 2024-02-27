@@ -5,43 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16ecdbcc-c119-44c3-ae3b-763275e22019" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/PropayNUnitFramework/Configs/appSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PropayTestAutomation.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PropayTestAutomation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PropayTestAutomation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Features/LoginFeature.feature" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/Features/LoginFeature.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Features/LoginFeature.feature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/Features/LoginFeature.feature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Features/ProgressFeature.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Features/ProgressFeature.feature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/ImplicitUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/ImplicitUsings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Pages/LoginPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/Pages/LoginPage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/Pages/ProgressPage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/StepDefinitions/LoginStepDefinitions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/StepDefinitions/LoginStepDefinitions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/StepDefinitions/ProgressTestStepDefinitions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/Configs/appSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/Configs/appSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/TestExecution.json" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/bin/Debug/net6.0/TestExecution.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ref/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/ref/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/refint/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/Debug/net6.0/refint/ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayNUnitFramework/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/PropayNUnitFramework/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/Configs/ConfigReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/Configs/ConfigReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/Configs/appSettings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/DriverHelpers/DriverHelpers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/DriverHelpers/DriverHelpers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/ProPay.Test.NewGen.Runners.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/ProPay.Test.NewGen.Runners.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/bin/Debug/net6.0/Configs/appSettings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/bin/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ProPay.Test.NewGen.Runners.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ref/ProPay.Test.NewGen.Runners.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/ref/ProPay.Test.NewGen.Runners.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/refint/ProPay.Test.NewGen.Runners.dll" beforeDir="false" afterPath="$PROJECT_DIR$/PropayTestAutomation/obj/Debug/net6.0/refint/ProPay.Test.NewGen.Runners.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +31,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/Configs/ConfigReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/Configs/ConfigReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/Configs/ConfigReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/saurabh/RiderProjects/Propay-Automation/PropayTestAutomation/Configs/ConfigReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://Clipboard.txt" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,29 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "9efdd270-716e-4d7c-940d-251fe8660e9e.executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/saurabh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/saurabh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache&quot;,
-      &quot;/Users/saurabh/.local/share/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/saurabh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/DecompilerCache",
+      "/Users/saurabh/Library/Application Support/JetBrains/Rider2023.3/resharper-host/SourcesCache",
+      "/Users/saurabh/.local/share/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -109,7 +98,7 @@
       <workItem from="1709043285241" duration="12000" />
       <workItem from="1709043299508" duration="5000" />
       <workItem from="1709043321678" duration="7000" />
-      <workItem from="1709043354335" duration="50000" />
+      <workItem from="1709043354335" duration="3701000" />
     </task>
     <task id="LOCAL-00001" summary="changes related to default files">
       <option name="closed" value="true" />
@@ -126,6 +115,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

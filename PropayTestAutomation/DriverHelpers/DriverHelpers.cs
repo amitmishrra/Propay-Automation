@@ -6,10 +6,9 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
 {
     public class DriverHelpers
     {
-        public static IWebDriver driver;
-        public static Lazy<WebDriverWait> _webDriverWait;
-
-        public static WebDriverWait GetDriverWait()
+        protected static IWebDriver driver;
+        protected static Lazy<WebDriverWait> _webDriverWait;
+        protected static WebDriverWait GetDriverWait()
         {
             // Set up WebDriverWait with specified timeout and polling interval
             return new WebDriverWait(driver, timeout: TimeSpan.FromSeconds( 30))
@@ -17,7 +16,6 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
                 PollingInterval = TimeSpan.FromSeconds(1)
             };
         }
-
         /// <summary>
         /// Finds a web element using the specified locator.
         /// </summary>
@@ -25,7 +23,7 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
         /// <returns>Found web element.</returns>
         public static IWebElement FindElement(By by)
         {
-            return _webDriverWait.Value.Until(_ => driver.FindElement(by));
+            return _webDriverWait.Value.Until(drv => drv.FindElement(by));
         }
 
         /// <summary>
@@ -35,157 +33,117 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
         /// <returns>List of found web elements.</returns>
         public static IEnumerable<IWebElement> FindElements(By by)
         {
-            return _webDriverWait.Value.Until(_ => driver.FindElements(by));
+            return _webDriverWait.Value.Until(drv => drv.FindElements(by));
         }
 
-        // Waits for the specified web element to be clickable
+        /// <summary>
+        /// Waits for the specified web element to be clickable.
+        /// </summary>
+        /// <param name="element">The web element to wait for.</param>
         public static void WaitForWebElementToBeClickable(IWebElement element)
         {
-
-            try
+            _webDriverWait.Value.Until(driver =>
             {
-                var wait = GetDriverWait();
-                _webDriverWait.Value.Until(_ => (element != null && element.Displayed && element.Enabled));
-            }
-            catch (WebDriverTimeoutException e)
-            {
-                Console.WriteLine("Element did not become clickable within the specified time.");
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-            }
+                try
+                {
+                    return element != null && element.Displayed && element.Enabled;
+                }
+                catch (NoSuchElementException)
+                {
+                    // Element not found
+                    return false;
+                }
+                catch (StaleElementReferenceException)
+                {
+                    // Element is no longer attached to the DOM
+                    return false;
+                }
+            });
         }
 
-        // Waits for the specified web element to be visible
-        public static void WaitForWebElementToBeVisible(IWebElement webElement)
+
+        /// <summary>
+        /// Waits for the specified web element to be visible.
+        /// </summary>
+        /// <param name="webElement">The web element to wait for.</param>
+        private static void WaitForWebElementToBeVisible(IWebElement webElement)
         {
-
-            try
-            {
-                var wait = GetDriverWait();
-                wait.Until(_ => (webElement != null && webElement.Displayed));
-            }
-            catch (WebDriverTimeoutException e)
-            {
-                Console.WriteLine("Element did not become visible within the specified time.");
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-            }
+            _webDriverWait.Value.Until(drv => webElement != null && webElement.Displayed);
         }
 
-        // Scrolls to the specified element and clicks it
+        /// <summary>
+        /// Scrolls to the specified element and clicks it.
+        /// </summary>
+        /// <param name="element">The web element to scroll to and click.</param>
         public static void ScrollAndClickElement(IWebElement element)
         {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
-
-                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-                element.Click();
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-            }
+            ScrollToElement(element);
+            element.Click();
         }
 
-        // Scrolls to the specified element
+        /// <summary>
+        /// Scrolls to the specified element.
+        /// </summary>
+        /// <param name="element">The web element to scroll to.</param>
         public static void ScrollToElement(IWebElement element)
         {
-            try
-            {
-                ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-            }
+            ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", element);
         }
 
-        // Clicks on an element identified by the specified text
-        public static void ClickOnText(string text)
+        /// <summary>
+        /// Clicks on an element identified by the specified text.
+        /// </summary>
+        /// <param name="text">The text of the element to click on.</param>
+        protected static void ClickOnText(string text)
         {
-            try
-            {
-                IWebElement element = driver.FindElement(By.XPath("//*[text()='" + text + "']"));
-                WaitForWebElementToBeVisible(element);
-                Click(element);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Test failed: " + e.Message);
-            }
+            IWebElement element = FindElement(By.XPath($"//*[text()='{text}']"));
+            element.Click();
         }
 
-        // Clicks on the specified element
-        public static void Click(IWebElement element)
+        /// <summary>
+        /// Sends keys to the specified element.
+        /// </summary>
+        /// <param name="element">The element to send keys to.</param>
+        /// <param name="text">The text to send.</param>
+        protected static void SendKeys(IWebElement element, string text)
         {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-                wait.Until(driver => (element != null && element.Displayed && element.Enabled));
-                element.Click();
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Test failed: " + e.Message);
-            }
+            element.SendKeys(text);
         }
 
-        // Sends keys to the specified element
-        public static void SendKeys(IWebElement element, String text)
+        /// <summary>
+        /// Clears the element and sends keys to it.
+        /// </summary>
+        /// <param name="element">The element to clear and send keys to.</param>
+        /// <param name="text">The text to send.</param>
+        public static void CleanAndSendKeys(IWebElement element, string text)
         {
-            try
-            {
-                WaitForWebElementToBeVisible(element);
-                element.SendKeys(text);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail("Test failed: " + e.Message);
-            }
+            element.Clear();
+            element.SendKeys(text);
         }
 
-        // Clears the element and sends keys to it
-        public static void CleanAndSendKeys(IWebElement element, String text)
-        {
-            try
-            {
-                WaitForWebElementToBeVisible(element);
-                element.Clear();
-                element.SendKeys(text);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-            }
-        }
-
-        // Checks if an element identified by the specified By exists
+        /// <summary>
+        /// Checks if an element identified by the specified By exists.
+        /// </summary>
+        /// <param name="by">The locator strategy to use.</param>
+        /// <returns>True if the element exists, otherwise false.</returns>
         public static bool IsElementPresent(By by)
         {
             try
             {
-                IWebElement element = driver.FindElement(by);
+                driver.FindElement(by);
                 return true;
             }
             catch (NoSuchElementException)
             {
                 return false;
             }
-            catch (Exception ex)
-            {
-                Assert.Fail("Test failed: " + ex.Message);
-                return false;
-            }
         }
 
-        // Checks if the specified text is present in the page
-        public static bool IsTextPresent(string text)
+        /// <summary>
+        /// Checks if the specified text is present in the page.
+        /// </summary>
+        /// <param name="text">The text
+        protected static bool IsTextPresent(string text)
         {
             try
             {
@@ -205,6 +163,21 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
             }
         }
 
+        // Clicks on the specified element
+        protected static void Click(IWebElement element)
+        {
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+                _webDriverWait.Value.Until(drv => element != null && element.Displayed);
+                element.Click();
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Test failed: " + e.Message);
+            }
+        }
+        
         // Implements a basic fluent wait
         public static void FluentWait(int seconds)
         {
@@ -217,26 +190,6 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
                 elapsedTime = currentTime - startTime;
                 Thread.Sleep(100);
             } while (elapsedTime.TotalMilliseconds < seconds * 1000);
-        }
-
-        /* public static void TakeScreenshot(string fileName)
-         {
-             Console.WriteLine("Take screenshot");
-             ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
-             Screenshot screenshot = screenshotDriver.GetScreenshot();
-
-             try
-             {
-                 screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
-             }
-             catch (Exception e)
-             {
-                 Console.WriteLine("An error occurred while taking a screenshot: " + e.Message);
-             }
-         }*/
-        public void AsstertMethod()
-        {
-            
         }
     }
 }
