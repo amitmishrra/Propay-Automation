@@ -1,4 +1,4 @@
-@Login
+@Login @Hooks
 Feature: Login
 
     Scenario: Login Test

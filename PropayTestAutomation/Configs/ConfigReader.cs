@@ -14,8 +14,6 @@ namespace ProPay.Test.NewGen.Runners.Configs
             // Construct the path to the appSettings.json file
             var configFilePath = Path.Combine(assemblyPath, "Configs", "appSettings.json");
             
-            Console.WriteLine("Config file path: " + configFilePath);
-
             // Ensure the file exists
             if (!File.Exists(configFilePath))
             {

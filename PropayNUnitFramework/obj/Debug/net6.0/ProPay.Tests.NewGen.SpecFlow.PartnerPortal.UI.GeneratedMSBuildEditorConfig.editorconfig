@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI
-build_property.ProjectDir = /Users/saurabh/RiderProjects/Propay-Automation/PropayNUnitFramework/
+build_property.ProjectDir = C:\Users\Amit\source\repos\PropayTestAutomation\PropayNUnitFramework\

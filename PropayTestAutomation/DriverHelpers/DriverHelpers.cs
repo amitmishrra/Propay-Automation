@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
+using System.Reflection;
 
 namespace ProPay.Test.NewGen.Runners.DriverHelpers
 {
@@ -147,10 +149,8 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
         {
             try
             {
-                By by = By.XPath("//*[contains(text(),'" + text + "')]");
-                IWebElement element = driver.FindElement(by);
-                WaitForWebElementToBeVisible(element);
-                return true;
+                IWebElement element = FindElement(By.XPath("//*[contains(text(),'" + text + "')]"));
+                return element.Displayed;
             }
             catch (NoSuchElementException)
             {
@@ -158,17 +158,17 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
             }
             catch (Exception ex)
             {
-                Assert.Fail("Test failed: " + ex.Message);
+                Assert.Fail("Text '" + text + "' not found : " + ex.Message);
                 return false;
             }
         }
+
 
         // Clicks on the specified element
         protected static void Click(IWebElement element)
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 _webDriverWait.Value.Until(drv => element != null && element.Displayed);
                 element.Click();
             }
@@ -190,6 +190,14 @@ namespace ProPay.Test.NewGen.Runners.DriverHelpers
                 elapsedTime = currentTime - startTime;
                 Thread.Sleep(100);
             } while (elapsedTime.TotalMilliseconds < seconds * 1000);
+        }
+
+        protected string TakeScreenshot(string filename)
+        {
+            var screenshot = driver.TakeScreenshot();
+            var path = $"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}//{filename}.png";
+            screenshot.SaveAsFile(path);
+            return path;
         }
     }
 }

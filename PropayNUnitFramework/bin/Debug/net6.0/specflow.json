@@ -1,0 +1,24 @@
+{
+  "specFlow": {
+    "language": {
+      "feature": "en-US"
+    },
+    "unitTestProvider": {
+      "name": "NUnit"
+    },
+    "generator": {
+      "allowDebugGeneratedFiles": true,
+      "allowRowTests": true,
+      "generateAsyncTests": false
+    },
+    "runtime": {
+      "stopAtFirstError": false,
+      "missingOrPendingStepsOutcome": "Inconclusive"
+    },
+    "trace": {
+      "traceSuccessfulSteps": true,
+      "traceTimings": false,
+      "minTracedDuration": "0:0:0.1"
+    }
+  }
+}

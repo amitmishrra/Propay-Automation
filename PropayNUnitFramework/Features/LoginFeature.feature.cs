@@ -22,13 +22,15 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Login")]
     [NUnit.Framework.CategoryAttribute("Login")]
+    [NUnit.Framework.CategoryAttribute("Hooks")]
     public partial class LoginFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = new string[] {
-                "Login"};
+                "Login",
+                "Hooks"};
         
 #line 1 "LoginFeature.feature"
 #line hidden
@@ -38,7 +40,8 @@ namespace ProPay.Tests.NewGen.SpecFlow.PartnerPortal.UI.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", null, ProgrammingLanguage.CSharp, new string[] {
-                        "Login"});
+                        "Login",
+                        "Hooks"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
